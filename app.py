@@ -8,17 +8,11 @@ import base64
 # --- PATH SETTINGS ---
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
-profile_pic = current_dir / "assets" / "profile-pic.png"
-picture = current_dir / "assets" / "profile-pic.png"
-
 
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Shania Canoy | Portfolio"
 PAGE_ICON = "🌸"
 NAME = "Shania Canoy"
-DESCRIPTION = """
-Senior Data Analyst, assisting enterprises by supporting data-driven decision-making.
-"""
 EMAIL = "canoy.shania@gmail.com"
 SOCIAL_MEDIA = {
     "YouTube": "https://youtube.com/c/codingisfun",
@@ -30,10 +24,10 @@ SOCIAL_MEDIA = {
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
 
-# --- LOAD CSS, PDF & PROFILE PIC ---
+# --- LOAD CSS ---
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
-profile_pic = Image.open(profile_pic)
+
 
 # --- HERO SECTION ---
 st.write("---")
@@ -67,6 +61,7 @@ software_icons = {
 }
 
 st.write("---")
+
 # Social media links
 social_media_links = {
     "GitHub": "https://github.com/shaniacc",
@@ -183,7 +178,6 @@ Developer Student Clubs CIT-U Chapter</b></p>
 st.write('\n')
 st.write("---")
 
-# Function to render software icons and progress bars
 def render_skill(icon_key, skill_name, progress_value):
     coll1, coll2 = st.columns([0.5, 3], gap="small")
     with coll1:
@@ -208,7 +202,6 @@ st.markdown(
 
 container = st.container(border=True)
 
-# Add two columns inside the container
 with container:
     st.write('\n')
     col1, col2, col3, col4 = st.columns([0.2,2,2,0.2], gap="small")
@@ -265,7 +258,7 @@ with col1:
     )
     st.write('\n')
     st.write('\n')
-    # Custom button with specified width using HTML and CSS
+
     st.markdown(
         """
         <style>
